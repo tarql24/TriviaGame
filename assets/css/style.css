@@ -14,11 +14,27 @@ h1 {
   text-align: center;
 }
 
+.startButton {
+  text-align: center;
+  font-size: 30px;
+  /* height: 100px; */
+  padding: 40px;
+  width: 350px;
+  border: 1px solid green;
+  margin: auto;
+  background-color: purple;
+}
+
 .trivbox {
   background: rgb(247, 168, 98);
   width: 650px;
   margin: auto;
   text-align: center;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
 }
 
 .insidebox {
@@ -34,4 +50,21 @@ h1 {
 
 #question {
   font-size: 30px;
+}
+
+.questionrow {
+  margin-top: 20px;
+}
+
+#subbutton {
+  width: 200px;
+  height: 50px;
+}
+
+.answerBox {
+  margin: auto;
+}
+
+#unanswered {
+  padding-bottom: 20px;
 }
