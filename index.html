@@ -11,11 +11,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-    ></script>
   </head>
   <body>
     <div class="container">
@@ -23,149 +18,102 @@
         <div class="header">
           <h1>Totally Trivia Triva</h1>
         </div>
+        
+        <div id="startBtn" class="startButton">Click Here To Start!!!</div>
         <div class="insidebox">
-          <div id="timer"><h2>2000</h2></div>
+          <div id="timer"><h2>Remaining Time: 2000</h2></div>
           <div class="questionsbox">
-            <div id="question"></div>
-            <div id="buttons"></div>
+            <div class="questionrow">
+            <form>
+            <span style="font-weight: 400; font-size: 30px"
+              >Which one was a member of Public Enemy?</span
+            >
+            <br>
+            <fieldset id="q1">
+              <input type="radio" name="group1" value="wrong" /> KRS One</input>
+              <input type="radio" name="group1" value="wrong" /> Kwame</input>
+              <input type="radio" name="group1" value="right" /> Flava Flav</input>
+              <input type="radio" name="group1" value="wrong" /> Kool Moe Dee</input>
+            </fieldset>
+             </div>
+            <div class="questionrow">
+              
+                <span style="font-weight: 400; font-size: 30px;"
+              >Which rapper did the 1st slow love rap song?</span>
+                <br>
+                <fieldset id="q2">
+                <input type="radio" name="group2" value="right" /> LL Cool J</input>
+                <input type="radio" name="group2" value="wrong" /> Bestie Boys</input>
+                <input type="radio" name="group2" value="wrong" /> Run DMC</input>
+                <input type="radio" name="group2" value="wrong" /> Craig Mack</input>
+              </fieldset>
+          </div>
+          <div class="questionrow">
+              <span style="font-weight: 400; font-size: 30px;"
+                >Which comedian was in Heavy D's video & later stared in Rush Hour?</span>
+                <br>
+                <fieldset id="q3">
+                <input type="radio" name="group3" value="wrong" /> Kevin Heart</input>
+                <input type="radio" name="group3" value="wrong" /> Chris Tucker</input>
+                <input type="radio" name="group3" value="right" /> Chris Rock</input>
+                <input type="radio" name="group3" value="wrong" /> Kat Williams</input>
+                </fieldset>
+            </div>
+            <div class="questionrow">
+                <span style="font-weight: 400; font-size: 30px;"
+                  >Which rapper from N.W.A. made the movie Friday?</span>
+                  <br>
+                  <fieldset id="q4">
+                  <input type="radio" name="group4" value="wrong" /> Dr. Dre</input>
+                  <input type="radio" name="group4" value="wrong" /> Eazy-E</input>
+                  <input type="radio" name="group4" value="right" /> Ice Cube</input>
+                  <input type="radio" name="group4" value="wrong" /> DJ Yella</input>
+                  <input type="radio" name="group4" value="wrong" /> MC Ren</input>
+                  </fieldset>
+              </div>
+              <div class="questionrow">
+                <span style="font-weight: 400; font-size: 30px;"
+                  >Which rap group starred in House Party along with Martin Lawrence?</span
+                >
+                <br>
+                <fieldset id="q5">
+                  <input type="radio" name="group5" value="wrong" /> Queen Latifah</input>
+                  <input type="radio" name="group5" value="right" /> Kid'n'Play</input>
+                  <input type="radio" name="group5" value="wrong" /> Salt'n'Pepa</input>
+                  <input type="radio" name="group5" value="wrong" /> Eric B & Rakim</input>
+                </fieldset>
+              </div>
+              <div class="questionrow">
+                <span style="font-weight: 400; font-size: 30px;"
+                  >Which rap group 1st started as Salt'n'Pepa's dancers?</span
+                ><br>
+                <fieldset id="q6">
+                  <input type="radio" name="group6" value="wrong" /> 2Pac</input>
+                  <input type="radio" name="group6" value="wrong" /> Tribe Called Quest</input>
+                  <input type="radio" name="group6" value="wrong" /> MC Hammer</input>
+                  <input type="radio" name="group6" value="right" /> Kid'n'Play</input>
+                </fieldset>
+                <br><br>
+                  <input id="subbutton" type="submit" value="Submit">
+                </form>
+              </div>            
           </div>
         </div>
+      
+        <div class="answerBox">
+          <div id="right">right</div>
+          <div id="wrong">wrong</div>
+          <div id="unanswered">unanswered</div>
+        </div>
+
+
       </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Script -->
-    <script type="text/javascript">
-      //  Interval Demonstration
-      //  Set our number counter to 100.
-      var number = 2000;
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    
+    
 
-      //  Variable that will hold our interval ID when we execute
-      //  the "run" function
-      var intervalId;
-
-      //  When the stop button gets clicked, run the stop function.
-      //   $("#stop").on("click", stop);
-
-      //  When the resume button gets clicked, execute the run function.
-      //   $("#resume").on("click", run);
-
-      //  The run function sets an interval
-      //  that runs the decrement function once a second.
-      //  *****BUG FIX********
-      //  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
-      function run() {
-        clearInterval(intervalId);
-        intervalId = setInterval(decrement, 1000);
-      }
-
-      //  The decrement function.
-      function decrement() {
-        //  Decrease number by one.
-        number--;
-
-        //  Show the number in the #show-number tag.
-        $("#timer").html("<h2>" + number + "</h2>");
-
-        //  Once number hits zero...
-        if (number === 0) {
-          //  ...run the stop function.
-          stop();
-
-          //  Alert the user that time is up.
-          alert("Time Up!");
-        }
-      }
-
-      //  The stop function
-      //   function stop() {
-      //     //  Clears our intervalId
-      //     //  We just pass the name of the interval
-      //     //  to the clearInterval function.
-      //     clearInterval(intervalId);
-      //   }
-
-      //  Execute the run function.
-      run();
-
-      function makeButton() {
-        $("#question").html("Which one was a member of Public Enemy?");
-
-        //   function renderButtons() {
-        var answers = ["De La Soul", "Flava Fav", "Biz Markie", "Kool G Rap"];
-        // Deleting the buttons prior to adding new movies
-        // (this is necessary otherwise you will have repeat buttons)
-        $("#buttons").empty();
-
-        // Looping through the array of movies
-        for (var i = 0; i < answers.length; i++) {
-          // Then dynamicaly generating buttons for each movie in the array
-          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-          var a = $("<button>");
-          // Adding a class of movie to our button
-          a.addClass("choice");
-          // Adding a data-attribute
-          a.attr("data-name", answers[i]);
-          // Providing the initial button text
-          a.text(answers[i]);
-          // Adding the button to the buttons-view div
-          $("#buttons").append(a);
-        }
-      }
-
-      $("#question").html("Which one was a member of Public Enemy?");
-
-      //   function renderButtons() {
-      var answers = ["De La Soul", "Flava Fav", "Biz Markie", "Kool G Rap"];
-      // Deleting the buttons prior to adding new movies
-      // (this is necessary otherwise you will have repeat buttons)
-      $("#buttons").empty();
-
-      // Looping through the array of movies
-      for (var i = 0; i < answers.length; i++) {
-        // Then dynamicaly generating buttons for each movie in the array
-        // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-        var a = $("<button>");
-        // Adding a class of movie to our button
-        a.addClass("choice");
-        // Adding a data-attribute
-        a.attr("data-name", answers[i]);
-        // Providing the initial button text
-        a.text(answers[i]);
-        // Adding the button to the buttons-view div
-        $("#buttons").append(a);
-      }
-
-      //   }
-
-      //   // Function for displaying movie data
-      //   function renderButtons() {
-      //     // Deleting the movies prior to adding new movies
-      //     // (this is necessary otherwise we will have repeat buttons)
-      //     $("#buttons-view").empty();
-
-      //     // Looping through the array of movies
-      //     for (var i = 0; i < movies.length; i++) {
-      //       // Then dynamicaly generating buttons for each movie in the array
-      //       // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-      //       var a = $("<button>");
-      //       // Adding a class
-      //       a.addClass("movie");
-      //       // Added a data-attribute
-      //       a.attr("data-name", movies[i]);
-      //       // Provided the initial button text
-      //       a.text(movies[i]);
-      //       // Added the button to the HTML
-      //       $("#buttons-view").append(a);
-      //     }
-      //   }
-    </script>
-    <!-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
-    <!-- <link
-      rel="javascript"
-      href="assets/javascript/app.js"
-      type="text/javascript"
-    /> -->
   </body>
 </html>
