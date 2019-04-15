@@ -1,0 +1,37 @@
+/* .container {
+  background: url("../images/background11.jpg");
+  background-size: cover;
+  width: 100%;
+  /* overflow: hidden; */
+/* margin-top: -8;
+  position: absolute;
+  border: none; */
+/* } */
+
+h1 {
+  font-family: "Luckiest Guy", cursive;
+  background: red;
+  text-align: center;
+}
+
+.trivbox {
+  background: rgb(247, 168, 98);
+  width: 650px;
+  margin: auto;
+  text-align: center;
+}
+
+.insidebox {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.choice {
+  margin-right: 3px;
+}
+
+#question {
+  font-size: 30px;
+}
