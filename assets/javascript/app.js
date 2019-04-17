@@ -36,7 +36,7 @@ $("#startBtn").on("click", function() {
 
 function handleClick() {
   var amountCorrect = 0;
-  for (var i = 1; i <= 3; i++) {
+  for (var i = 1; i <= 7; i++) {
     var radios = document.getElementsByName("group" + i);
     for (var j = 0; j < radios.length; j++) {
       var radio = radios[j];
@@ -57,14 +57,14 @@ function handleClick() {
   console.log(amountCorrect);
   console.log(amountWrong);
   // console.log(unanswered);
-  console.log((unanswered = 3 - amountCorrect - amountWrong));
+  console.log((unanswered = 7 - amountCorrect - amountWrong));
   $("#right").html("<h2>Right: " + amountCorrect + "</h2>");
   $("#wrong").html("<h2>Wrong: " + amountWrong + "</h2>");
   $("#unanswered").html("<h2>Unanswered: " + unanswered + "</h2>");
 }
 
 // $("#subbutton").on("click");
-var number = 15;
+var number = 35;
 
 //  Variable that will hold our interval ID when we execute
 //  the "run" function
@@ -87,7 +87,7 @@ function decrement() {
   if (number === 0) {
     //  ...run the stop function.
     stop();
-    score();
+    handleClick();
     $(".insidebox").hide();
     $(".startBtn").hide();
     $(".answerBox").show();
