@@ -21,7 +21,7 @@
         
         <div id="startBtn" class="startButton">Click Here To Start!!!</div>
         <div class="insidebox">
-          <div id="timer"><h2>Remaining Time: 2000</h2></div>
+          <div id="timer"><h2>Remaining Time: 20</h2></div>
             <div class="questionsbox">
               <form name="quiz" method="post" name="buttons" id="quiz" onsubmit="return false">
 
@@ -43,7 +43,7 @@
                   <input id="answer" type="radio" name="group3" value="wrong" /> Kat Williams<br>
                   <input id="answer" type="radio" name="group3" value="wrong" /> Bernie Mac<hr>
           
-                  <button class="submit" onclick="return handleClick();" type="submit">Submit</button>
+                  <button class="submit" onclick="return scoreTotal();" type="submit">Submit</button>
                   
               </form>
             
@@ -57,7 +57,7 @@
           <div id="unanswered"></div>
         </div>
 
-
+        
       </div>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -68,6 +68,3 @@
 
   </body>
 </html>
-
-
-
