@@ -6,7 +6,6 @@ var clockRunning = false;
 $(document).ready(function() {
   $(".insidebox").hide();
   $(".answerBox").hide();
-  $("#playAgainButton").hide();
 });
 
 // This initializes the button that starts the game
@@ -37,7 +36,6 @@ function scoreTotal() {
   }
   $(".insidebox").hide();
   $(".answerBox").show();
-  $("#playAgainButton").show();
   console.log(radio.length);
   // alert("Correct Responses: " + amountCorrect);
   console.log(amountCorrect);
