@@ -6,6 +6,7 @@ var clockRunning = false;
 $(document).ready(function() {
   $(".insidebox").hide();
   $(".answerBox").hide();
+  $("#playAgainButton").hide();
 });
 
 // This initializes the button that starts the game
@@ -18,23 +19,7 @@ $("#startBtn").on("click", function() {
   run();
 });
 
-// This is the button that stops clock and goes to score page and hides questions
-// $("#subbutton").on("click", function() {
-//   // when the start button clicked, the div with the questions that was hidden is shown
-//   // $(".insidebox").hide();
-//   // $(".startBtn").hide();
-//   // $(".answerBox").show();
-
-//   // id="startBtn" class="startButton"
-
-//   console.log("score");
-
-//   // $(this).hide();
-//   stop();
-//   score();
-// });
-
-function handleClick() {
+function scoreTotal() {
   var amountCorrect = 0;
   for (var i = 1; i <= 3; i++) {
     var radios = document.getElementsByName("group" + i);
@@ -52,6 +37,7 @@ function handleClick() {
   }
   $(".insidebox").hide();
   $(".answerBox").show();
+  $("#playAgainButton").show();
   console.log(radio.length);
   // alert("Correct Responses: " + amountCorrect);
   console.log(amountCorrect);
@@ -61,10 +47,11 @@ function handleClick() {
   $("#right").html("<h2>Right: " + amountCorrect + "</h2>");
   $("#wrong").html("<h2>Wrong: " + amountWrong + "</h2>");
   $("#unanswered").html("<h2>Unanswered: " + unanswered + "</h2>");
+  stop();
 }
 
 // $("#subbutton").on("click");
-var number = 15;
+var number = 20;
 
 //  Variable that will hold our interval ID when we execute
 //  the "run" function
@@ -87,7 +74,7 @@ function decrement() {
   if (number === 0) {
     //  ...run the stop function.
     stop();
-    score();
+    scoreTotal();
     $(".insidebox").hide();
     $(".startBtn").hide();
     $(".answerBox").show();
@@ -105,23 +92,3 @@ function stop() {
   clearInterval(intervalId);
   clockRunning = false;
 }
-
-// function score() {
-//   if ($("input[name=group1]:checked").val() === "right") {
-//     console.log("meow");
-//     right++;
-//   } else if ($("input[name=group1]:checked").val() === "wrong") {
-//     wrong++;
-//   } else {
-//     unanswered++;
-//   }
-//   console.log(right);
-//   console.log(wrong);
-// }
-// $("#right").html("<h2>Right: " + amountCorrect + "</h2>");
-// $("#wrong").html("<h2>Wrong: " + amountWrong + "</h2>");
-// $("#unanswered").html("<h2>Unanswered: " + unanswered + "</h2>");
-// $("#right").text("<h2>Right: " + amountCorrect + "</h2>");
-// $("#wrong").text("<h2>Wrong: " + amountWrong + "</h2>");
-// $("#unanswered").text("<h2>Unanswered: " + unanswered + "</h2>");
-//  Execute the run function.
