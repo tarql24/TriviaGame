@@ -1,5 +1,5 @@
-var right = 0;
-var wrong = 0;
+var amountCorrect = 0;
+var amountWrong = 0;
 var unanswered = 0;
 var clockRunning = false;
 
@@ -19,34 +19,57 @@ $("#startBtn").on("click", function() {
 });
 
 // This is the button that stops clock and goes to score page and hides questions
-$("#subbutton").on("click", function() {
-  // when the start button clicked, the div with the questions that was hidden is shown
+// $("#subbutton").on("click", function() {
+//   // when the start button clicked, the div with the questions that was hidden is shown
+//   // $(".insidebox").hide();
+//   // $(".startBtn").hide();
+//   // $(".answerBox").show();
+
+//   // id="startBtn" class="startButton"
+
+//   console.log("score");
+
+//   // $(this).hide();
+//   stop();
+//   score();
+// });
+
+function handleClick() {
+  var amountCorrect = 0;
+  for (var i = 1; i <= 3; i++) {
+    var radios = document.getElementsByName("group" + i);
+    for (var j = 0; j < radios.length; j++) {
+      var radio = radios[j];
+      if (radio.value == "correct" && radio.checked) {
+        amountCorrect++;
+      } else if (radio.value == "wrong" && radio.checked) {
+        amountWrong++;
+      }
+      // else {
+      //   unanswered++;
+      // }
+    }
+  }
   $(".insidebox").hide();
-  $(".startBtn").hide();
   $(".answerBox").show();
-
-  // id="startBtn" class="startButton"
-
-  console.log("score");
-
-  // $(this).hide();
-  stop();
-});
+  console.log(radio.length);
+  // alert("Correct Responses: " + amountCorrect);
+  console.log(amountCorrect);
+  console.log(amountWrong);
+  // console.log(unanswered);
+  console.log((unanswered = 3 - amountCorrect - amountWrong));
+  $("#right").html("<h2>Right: " + amountCorrect + "</h2>");
+  $("#wrong").html("<h2>Wrong: " + amountWrong + "</h2>");
+  $("#unanswered").html("<h2>Unanswered: " + unanswered + "</h2>");
+}
 
 // $("#subbutton").on("click");
-var number = 10;
+var number = 15;
 
 //  Variable that will hold our interval ID when we execute
 //  the "run" function
 var intervalId;
 
-//  When the stop button gets clicked, run the stop function.
-//   $("#stop").on("click", stop);
-
-//  The run function sets an interval
-//  that runs the decrement function once a second.
-//  *****BUG FIX********
-//  Clearing the intervalId prior to setting our new intervalId will not allow multiple instances.
 function run() {
   clearInterval(intervalId);
   intervalId = setInterval(decrement, 1000);
@@ -64,6 +87,7 @@ function decrement() {
   if (number === 0) {
     //  ...run the stop function.
     stop();
+    score();
     $(".insidebox").hide();
     $(".startBtn").hide();
     $(".answerBox").show();
@@ -82,29 +106,22 @@ function stop() {
   clockRunning = false;
 }
 
+// function score() {
+//   if ($("input[name=group1]:checked").val() === "right") {
+//     console.log("meow");
+//     right++;
+//   } else if ($("input[name=group1]:checked").val() === "wrong") {
+//     wrong++;
+//   } else {
+//     unanswered++;
+//   }
+//   console.log(right);
+//   console.log(wrong);
+// }
+// $("#right").html("<h2>Right: " + amountCorrect + "</h2>");
+// $("#wrong").html("<h2>Wrong: " + amountWrong + "</h2>");
+// $("#unanswered").html("<h2>Unanswered: " + unanswered + "</h2>");
+// $("#right").text("<h2>Right: " + amountCorrect + "</h2>");
+// $("#wrong").text("<h2>Wrong: " + amountWrong + "</h2>");
+// $("#unanswered").text("<h2>Unanswered: " + unanswered + "</h2>");
 //  Execute the run function.
-
-function makeButton() {
-  $("#question").html("Which one was a member of Public Enemy?");
-
-  //   function renderButtons() {
-  var answers = ["De La Soul", "Flava Fav", "Biz Markie", "Kool G Rap"];
-  // Deleting the buttons prior to adding new movies
-  // (this is necessary otherwise you will have repeat buttons)
-  $("#buttons").empty();
-
-  // Looping through the array of movies
-  for (var i = 0; i < answers.length; i++) {
-    // Then dynamicaly generating buttons for each movie in the array
-    // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-    var a = $("<button>");
-    // Adding a class of movie to our button
-    a.addClass("choice");
-    // Adding a data-attribute
-    a.attr("data-name", answers[i]);
-    // Providing the initial button text
-    a.text(answers[i]);
-    // Adding the button to the buttons-view div
-    $("#buttons").append(a);
-  }
-}
