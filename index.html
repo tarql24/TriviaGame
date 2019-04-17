@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="trivbox">
+      
         <div class="header">
           <h1>Totally Trivia Triva</h1>
         </div>
@@ -22,88 +22,39 @@
         <div id="startBtn" class="startButton">Click Here To Start!!!</div>
         <div class="insidebox">
           <div id="timer"><h2>Remaining Time: 2000</h2></div>
-          <div class="questionsbox">
-            <div class="questionrow">
-            <form>
-            <span style="font-weight: 400; font-size: 30px"
-              >Which one was a member of Public Enemy?</span
-            >
-            <br>
-            <fieldset id="q1">
-              <input type="radio" name="group1" value="wrong" /> KRS One</input>
-              <input type="radio" name="group1" value="wrong" /> Kwame</input>
-              <input type="radio" name="group1" value="right" /> Flava Flav</input>
-              <input type="radio" name="group1" value="wrong" /> Kool Moe Dee</input>
-            </fieldset>
-             </div>
-            <div class="questionrow">
-              
-                <span style="font-weight: 400; font-size: 30px;"
-              >Which rapper did the 1st slow love rap song?</span>
-                <br>
-                <fieldset id="q2">
-                <input type="radio" name="group2" value="right" /> LL Cool J</input>
-                <input type="radio" name="group2" value="wrong" /> Bestie Boys</input>
-                <input type="radio" name="group2" value="wrong" /> Run DMC</input>
-                <input type="radio" name="group2" value="wrong" /> Craig Mack</input>
-              </fieldset>
-          </div>
-          <div class="questionrow">
-              <span style="font-weight: 400; font-size: 30px;"
-                >Which comedian was in Heavy D's video & later stared in Rush Hour?</span>
-                <br>
-                <fieldset id="q3">
-                <input type="radio" name="group3" value="wrong" /> Kevin Heart</input>
-                <input type="radio" name="group3" value="wrong" /> Chris Tucker</input>
-                <input type="radio" name="group3" value="right" /> Chris Rock</input>
-                <input type="radio" name="group3" value="wrong" /> Kat Williams</input>
-                </fieldset>
-            </div>
-            <div class="questionrow">
-                <span style="font-weight: 400; font-size: 30px;"
-                  >Which rapper from N.W.A. made the movie Friday?</span>
-                  <br>
-                  <fieldset id="q4">
-                  <input type="radio" name="group4" value="wrong" /> Dr. Dre</input>
-                  <input type="radio" name="group4" value="wrong" /> Eazy-E</input>
-                  <input type="radio" name="group4" value="right" /> Ice Cube</input>
-                  <input type="radio" name="group4" value="wrong" /> DJ Yella</input>
-                  <input type="radio" name="group4" value="wrong" /> MC Ren</input>
-                  </fieldset>
-              </div>
-              <div class="questionrow">
-                <span style="font-weight: 400; font-size: 30px;"
-                  >Which rap group starred in House Party along with Martin Lawrence?</span
-                >
-                <br>
-                <fieldset id="q5">
-                  <input type="radio" name="group5" value="wrong" /> Queen Latifah</input>
-                  <input type="radio" name="group5" value="right" /> Kid'n'Play</input>
-                  <input type="radio" name="group5" value="wrong" /> Salt'n'Pepa</input>
-                  <input type="radio" name="group5" value="wrong" /> Eric B & Rakim</input>
-                </fieldset>
-              </div>
-              <div class="questionrow">
-                <span style="font-weight: 400; font-size: 30px;"
-                  >Which rap group 1st started as Salt'n'Pepa's dancers?</span
-                ><br>
-                <fieldset id="q6">
-                  <input type="radio" name="group6" value="wrong" /> 2Pac</input>
-                  <input type="radio" name="group6" value="wrong" /> Tribe Called Quest</input>
-                  <input type="radio" name="group6" value="wrong" /> MC Hammer</input>
-                  <input type="radio" name="group6" value="right" /> Kid'n'Play</input>
-                </fieldset>
-                <br><br>
-                  <input id="subbutton" type="submit" value="Submit">
-                </form>
-              </div>            
-          </div>
+            <div class="questionsbox">
+              <form name="quiz" method="post" name="buttons" id="quiz" onsubmit="return false">
+
+                  <li><div class="question">Which one was a member of Public Enemy?</div></li>
+                  <input id="answer" type="radio" name="group1" value="wrong" /> KRS One<br>
+                  <input id="answer" type="radio" name="group1" value="wrong" /> Kwame<br>
+                  <input id="answer" type="radio" name="group1" value="correct" /> Flava Flav<br>
+                  <input id="answer" type="radio" name="group1" value="wrong" /> Kool Moe Dee<hr>
+          
+                  <li><div class="question">Which rapper did the 1st slow love rap song?</div></li>
+                  <input id="answer" type="radio" name="group2" value="wrong" /> Bestie Boys<br>
+                  <input id="answer" type="radio" name="group2" value="correct" /> LL Cool J<br>
+                  <input id="answer" type="radio" name="group2" value="wrong" /> Run DMC<br>
+                  <input id="answer" type="radio" name="group2" value="wrong" /> Craig Mack<hr>
+          
+                  <li><div class="question">Which comedian was in Heavy D's video & later stared in Rush Hour?</div></li>
+                  <input id="answer" type="radio" name="group3" value="correct" /> Chris Tucker<br>
+                  <input id="answer" type="radio" name="group3" value="wrong" /> Chris Rock<br>
+                  <input id="answer" type="radio" name="group3" value="wrong" /> Kat Williams<br>
+                  <input id="answer" type="radio" name="group3" value="wrong" /> Bernie Mac<hr>
+          
+                  <button class="submit" onclick="return handleClick();" type="submit">Submit</button>
+                  
+              </form>
+            
+            </div>            
         </div>
+        
       
         <div class="answerBox">
-          <div id="right">right</div>
-          <div id="wrong">wrong</div>
-          <div id="unanswered">unanswered</div>
+          <div id="right"></div>
+          <div id="wrong"></div>
+          <div id="unanswered"></div>
         </div>
 
 
@@ -117,3 +68,6 @@
 
   </body>
 </html>
+
+
+

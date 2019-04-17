@@ -1,12 +1,14 @@
-/* .container {
-  background: url("../images/background11.jpg");
-  background-size: cover;
+body {
+  background: url("../images/background2.jpg");
   width: 100%;
-  /* overflow: hidden; */
-/* margin-top: -8;
-  position: absolute;
-  border: none; */
-/* } */
+}
+
+.header {
+  width: 580px;
+  margin: auto;
+  height: 90px;
+  padding-top: 30px;
+}
 
 h1 {
   font-family: "Luckiest Guy", cursive;
@@ -19,29 +21,18 @@ h1 {
   font-size: 30px;
   /* height: 100px; */
   padding: 40px;
-  width: 350px;
+  width: 500px;
   border: 1px solid green;
   margin: auto;
   background-color: purple;
 }
 
-.trivbox {
-  background: rgb(247, 168, 98);
-  width: 650px;
-  margin: auto;
-  text-align: center;
-}
-
-fieldset {
-  border: none;
-  padding: 0;
-}
-
 .insidebox {
-  width: 600px;
+  width: 540px;
   margin: auto;
   text-align: center;
-  padding-bottom: 10px;
+  padding: 20px;
+  background-color: white;
 }
 
 .choice {
@@ -62,9 +53,18 @@ fieldset {
 }
 
 .answerBox {
+  width: 600px;
   margin: auto;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
 }
 
 #unanswered {
   padding-bottom: 20px;
+}
+
+.question {
+  font-weight: 400;
+  font-size: 30px;
 }
