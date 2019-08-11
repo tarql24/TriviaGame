@@ -8,3 +8,9 @@ The multiple choice questions along with a timer that you must complete the ques
 You can play the game [here](https://tarql24.github.io/TriviaGame/) at my Github master branch
 <img src="https://i.imgur.com/ei9GlWR.png">
 
+# Technologies used
+* HTML
+* CSS
+* JQuery
+* Javascript
+
